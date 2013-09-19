@@ -4,17 +4,14 @@
 import psycopg2
 import sys
 
-
 con = None
 
 try:
-     
-    con = psycopg2.connect(database='testdb', user='obaa') 
+    con = psycopg2.connect(database='testdb', user='postgres') 
     cur = con.cursor()
     cur.execute('SELECT version()')          
     ver = cur.fetchone()
     print (ver)    
-    
 
 except psycopg2.DatabaseError:
     print ('Error')
@@ -24,3 +21,5 @@ except psycopg2.DatabaseError:
 finally:
     if con:
         con.close()
+        
+        
