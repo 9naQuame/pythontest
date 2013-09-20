@@ -1,3 +1,8 @@
+#! /usr/bin/env python
+
+from db import *
+print(db.__name__)
+
 combo = { }
 
 for i in range(1,7):
